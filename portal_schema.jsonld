@@ -2715,16 +2715,16 @@
                     "@id": "bts:CollectionSampleType"
                 },
                 {
-                    "@id": "bts:SampleId"
+                    "@id": "bts:SampleID"
                 },
                 {
-                    "@id": "bts:ContainerId"
+                    "@id": "bts:ContainerID"
                 },
                 {
                     "@id": "bts:SampleType"
                 },
                 {
-                    "@id": "bts:ParentSampleId"
+                    "@id": "bts:ParentSampleID"
                 },
                 {
                     "@id": "bts:ParentSampleType"
@@ -2753,11 +2753,11 @@
         {
             "@id": "bts:CollectionID",
             "@type": "rdfs:Class",
-            "rdfs:comment": "List of Collection?? IDs for biospecimens associated with this file",
+            "rdfs:comment": "Identifier for a collection event, during which one or more primary samples are collected, assigned by DCC. Referenced in time with respect to clinical course or to other collection events.",
             "rdfs:label": "CollectionID",
             "rdfs:subClassOf": [
                 {
-                    "@id": "bts:DataFile"
+                    "@id": "bts:Biospecimen"
                 }
             ],
             "schema:isPartOf": {
@@ -2765,9 +2765,7 @@
             },
             "sms:displayName": "Collection ID",
             "sms:required": "sms:false",
-            "sms:validationRules": [
-                "list"
-            ]
+            "sms:validationRules": []
         },
         {
             "@id": "bts:CollectionSampleType",
@@ -2787,27 +2785,29 @@
             "sms:validationRules": []
         },
         {
-            "@id": "bts:SampleId",
+            "@id": "bts:SampleID",
             "@type": "rdfs:Class",
-            "rdfs:comment": "Identifier for sample, assigned (by DCC or contributor??) at time of collection, processing, treatment, or derivation. A sample is a unique biological material; two samples with two different IDs are biologically distinct.",
-            "rdfs:label": "SampleId",
+            "rdfs:comment": "List of Collection?? IDs for biospecimens associated with this file",
+            "rdfs:label": "SampleID",
             "rdfs:subClassOf": [
                 {
-                    "@id": "bts:Biospecimen"
+                    "@id": "bts:DataFile"
                 }
             ],
             "schema:isPartOf": {
                 "@id": "http://schema.biothings.io"
             },
-            "sms:displayName": "Sample Id",
+            "sms:displayName": "Sample ID",
             "sms:required": "sms:false",
-            "sms:validationRules": []
+            "sms:validationRules": [
+                "list"
+            ]
         },
         {
-            "@id": "bts:ContainerId",
+            "@id": "bts:ContainerID",
             "@type": "rdfs:Class",
             "rdfs:comment": "Unique identifier for specific container of sample, assigned by DCC or contributor??. For example, distinct aliquots of a sample will have the same Sample ID but different Container IDs.",
-            "rdfs:label": "ContainerId",
+            "rdfs:label": "ContainerID",
             "rdfs:subClassOf": [
                 {
                     "@id": "bts:Biospecimen"
@@ -2816,7 +2816,7 @@
             "schema:isPartOf": {
                 "@id": "http://schema.biothings.io"
             },
-            "sms:displayName": "Container Id",
+            "sms:displayName": "Container ID",
             "sms:required": "sms:false",
             "sms:validationRules": []
         },
@@ -2838,10 +2838,10 @@
             "sms:validationRules": []
         },
         {
-            "@id": "bts:ParentSampleId",
+            "@id": "bts:ParentSampleID",
             "@type": "rdfs:Class",
             "rdfs:comment": "Identifier from Parent Sample from which Sample was derived (if applicable)",
-            "rdfs:label": "ParentSampleId",
+            "rdfs:label": "ParentSampleID",
             "rdfs:subClassOf": [
                 {
                     "@id": "bts:Biospecimen"
@@ -2850,7 +2850,7 @@
             "schema:isPartOf": {
                 "@id": "http://schema.biothings.io"
             },
-            "sms:displayName": "Parent Sample Id",
+            "sms:displayName": "Parent Sample ID",
             "sms:required": "sms:false",
             "sms:validationRules": []
         },
@@ -2871,7 +2871,7 @@
             "sms:required": "sms:false",
             "sms:requiresDependency": [
                 {
-                    "@id": "bts:ParentSampleId"
+                    "@id": "bts:ParentSampleID"
                 }
             ],
             "sms:validationRules": []
@@ -3044,7 +3044,7 @@
                     "@id": "bts:ParticipantID"
                 },
                 {
-                    "@id": "bts:CollectionID"
+                    "@id": "bts:SampleID"
                 }
             ],
             "sms:validationRules": []
@@ -3231,10 +3231,10 @@
             "sms:validationRules": []
         },
         {
-            "@id": "bts:CollectionID",
+            "@id": "bts:SampleID",
             "@type": "rdfs:Class",
             "rdfs:comment": "List of Collection?? IDs for biospecimens associated with this file",
-            "rdfs:label": "CollectionID",
+            "rdfs:label": "SampleID",
             "rdfs:subClassOf": [
                 {
                     "@id": "bts:DataFile"
@@ -3243,7 +3243,7 @@
             "schema:isPartOf": {
                 "@id": "http://schema.biothings.io"
             },
-            "sms:displayName": "Collection ID",
+            "sms:displayName": "Sample ID",
             "sms:required": "sms:false",
             "sms:validationRules": []
         },

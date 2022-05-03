@@ -28,21 +28,21 @@ Diagnosis (NCIT),NCI Thesaurus code (annotated by data contributor or DCC),,,FAL
 Diagnosis (ICD),ICD-10 code (annotated by data contributor or DCC),,,FALSE,,Participant,,,list
 Diagnosis (Source Text),Diagnosis as described by data contributor,,,FALSE,,Participant,,,list
 Age at Diagnosis (Days),Age in days at which phenotype was assigned (or onset??),,,FALSE,,Participant,,,
-Biospecimen,,,"Participant ID, Collection ID, Collection Sample Type, Sample Id, Container Id, Sample Type, Parent Sample Id, Parent Sample Type, Age At Biospecimen Collection (Days), Sample Availability, Volume, Volume Unit, Laboratory Procedure, Biospecimen Storage",FALSE,,,,"Study, Participant, Data File",
+Biospecimen,,,"Participant ID, Collection ID, Collection Sample Type, Sample ID, Container ID, Sample Type, Parent Sample ID, Parent Sample Type, Age At Biospecimen Collection (Days), Sample Availability, Volume, Volume Unit, Laboratory Procedure, Biospecimen Storage",FALSE,,,,"Study, Participant, Data File",
 Collection ID,"Identifier for a collection event, during which one or more primary samples are collected, assigned by DCC. Referenced in time with respect to clinical course or to other collection events.",,,FALSE,,Biospecimen,,,
 Collection Sample Type,Type of biological material comprising the collected sample,,,FALSE,https://docs.google.com/spreadsheets/d/1cHSburUDg6CR4az5FZR82FI992h7cyv-22pLVTFLZvE/edit#gid=693366131,Biospecimen,,,
-Sample Id,"Identifier for sample, assigned (by DCC or contributor??) at time of collection, processing, treatment, or derivation. A sample is a unique biological material; two samples with two different IDs are biologically distinct.",,,FALSE,,Biospecimen,,,
-Container Id,"Unique identifier for specific container of sample, assigned by DCC or contributor??. For example, distinct aliquots of a sample will have the same Sample ID but different Container IDs.",,,FALSE,,Biospecimen,,,
+Sample ID,"Identifier for sample, assigned (by DCC or contributor??) at time of collection, processing, treatment, or derivation. A sample is a unique biological material; two samples with two different IDs are biologically distinct.",,,FALSE,,Biospecimen,,,
+Container ID,"Unique identifier for specific container of sample, assigned by DCC or contributor??. For example, distinct aliquots of a sample will have the same Sample ID but different Container IDs.",,,FALSE,,Biospecimen,,,
 Sample Type,Type of biological material comprising the sample,,,FALSE,https://docs.google.com/spreadsheets/d/1cHSburUDg6CR4az5FZR82FI992h7cyv-22pLVTFLZvE/edit#gid=693366131,Biospecimen,,,
-Parent Sample Id,Identifier from Parent Sample from which Sample was derived (if applicable),,,FALSE,,Biospecimen,,,
-Parent Sample Type,Type of Parent Sample,,Parent Sample Id,FALSE,https://docs.google.com/spreadsheets/d/1cHSburUDg6CR4az5FZR82FI992h7cyv-22pLVTFLZvE/edit#gid=693366131,Biospecimen,,,
+Parent Sample ID,Identifier from Parent Sample from which Sample was derived (if applicable),,,FALSE,,Biospecimen,,,
+Parent Sample Type,Type of Parent Sample,,Parent Sample ID,FALSE,https://docs.google.com/spreadsheets/d/1cHSburUDg6CR4az5FZR82FI992h7cyv-22pLVTFLZvE/edit#gid=693366131,Biospecimen,,,
 Age At Biospecimen Collection (Days),Age (in days) of participant at time of biospecimen collection,,,FALSE,,Biospecimen,,,
 Sample Availability,Whether or not the container (or sample??) is available for sharing through the Virtual Biorepository,"Available, Unavailable",,FALSE,,Biospecimen,,,
 Volume,Amount of sample in container,,,FALSE,,Biospecimen,,,
 Volume Unit,Unit of sample volume,,,FALSE,,Biospecimen,,,
 Laboratory Procedure,Procedure by which Sample was derived from Parent Sample,,,FALSE,,Biospecimen,,,
 Biospecimen Storage,Method by which Sample is stored,,,FALSE,,Biospecimen,,,
-Data File,,,"Data Access, File ID, File Name, Data Category, Data Type, Experimental Strategy, Access URL, Format, Size, Participant ID, Collection ID",FALSE,,,,"Study, Participant, Biospecimen",
+Data File,,,"Data Access, File ID, File Name, Data Category, Data Type, Experimental Strategy, Access URL, Format, Size, Participant ID, Sample ID",FALSE,,,,"Study, Participant, Biospecimen",
 Data Access,Type of access control on this file,"Controlled, Registered, Open",,FALSE,,Data File,,,
 File ID,"File identifier, assigned by DCC??",,,FALSE,,Data File,,,
 File Name,"Name of file, assigned by data contributor??",,,FALSE,,Data File,,,
@@ -53,4 +53,4 @@ Access URL,Storage location for this file ??,,,FALSE,,Data File,,,
 Format,Format of file,,,FALSE,,Data File,,,
 Size,Size of file,,,FALSE,,Data File,,,
 Participant ID,List of Participant IDs for participants associated with this file,,,FALSE,,Data File,,,list
-Collection ID,List of Collection?? IDs for biospecimens associated with this file,,,FALSE,,Data File,,,list
+Sample ID,List of Collection?? IDs for biospecimens associated with this file,,,FALSE,,Data File,,,list
