@@ -2096,7 +2096,7 @@
         {
             "@id": "bts:Program",
             "@type": "rdfs:Class",
-            "rdfs:comment": "Funding source for the study ??",
+            "rdfs:comment": "Funding source for the study",
             "rdfs:label": "Program",
             "rdfs:subClassOf": [
                 {
@@ -2199,37 +2199,37 @@
                     "@id": "bts:OutcomesVitalStatus"
                 },
                 {
-                    "@id": "bts:AgeattheLastVitalStatus(Days)"
+                    "@id": "bts:AgeatLastVitalStatus"
                 },
                 {
-                    "@id": "bts:Phenotype(HPO)"
+                    "@id": "bts:PhenotypeHPO"
                 },
                 {
-                    "@id": "bts:Phenotype(SourceText)"
+                    "@id": "bts:PhenotypeSourceText"
                 },
                 {
                     "@id": "bts:PhenotypeInterpretation"
                 },
                 {
-                    "@id": "bts:AgeatPhenotypeAssignment(Days)"
+                    "@id": "bts:AgeatPhenotypeAssignment"
                 },
                 {
                     "@id": "bts:DiagnosisType"
                 },
                 {
-                    "@id": "bts:Diagnosis(MONDO)"
+                    "@id": "bts:DiagnosisMONDO"
                 },
                 {
-                    "@id": "bts:Diagnosis(NCIT)"
+                    "@id": "bts:DiagnosisNCIT"
                 },
                 {
-                    "@id": "bts:Diagnosis(ICD)"
+                    "@id": "bts:DiagnosisICD"
                 },
                 {
-                    "@id": "bts:Diagnosis(SourceText)"
+                    "@id": "bts:DiagnosisSourceText"
                 },
                 {
-                    "@id": "bts:AgeatDiagnosis(Days)"
+                    "@id": "bts:AgeatDiagnosis"
                 }
             ],
             "sms:validationRules": []
@@ -2248,7 +2248,7 @@
                 "@id": "http://schema.biothings.io"
             },
             "sms:displayName": "Participant ID",
-            "sms:required": "sms:false",
+            "sms:required": "sms:true",
             "sms:validationRules": [
                 "list"
             ]
@@ -2499,7 +2499,7 @@
         {
             "@id": "bts:OutcomesVitalStatus",
             "@type": "rdfs:Class",
-            "rdfs:comment": "Whether participant is alive or dead [need valid values]",
+            "rdfs:comment": "Whether participant is alive or dead",
             "rdfs:label": "OutcomesVitalStatus",
             "rdfs:subClassOf": [
                 {
@@ -2514,10 +2514,10 @@
             "sms:validationRules": []
         },
         {
-            "@id": "bts:AgeattheLastVitalStatus(Days)",
+            "@id": "bts:AgeatLastVitalStatus",
             "@type": "rdfs:Class",
-            "rdfs:comment": "Age in days when participant's vital status was last recorded (or actual death date??)",
-            "rdfs:label": "AgeattheLastVitalStatus(Days)",
+            "rdfs:comment": "Age in days when participant's vital status was last recorded",
+            "rdfs:label": "AgeatLastVitalStatus",
             "rdfs:subClassOf": [
                 {
                     "@id": "bts:Participant"
@@ -2526,15 +2526,15 @@
             "schema:isPartOf": {
                 "@id": "http://schema.biothings.io"
             },
-            "sms:displayName": "Age at the Last Vital Status (Days)",
+            "sms:displayName": "Age at Last Vital Status",
             "sms:required": "sms:false",
             "sms:validationRules": []
         },
         {
-            "@id": "bts:Phenotype(HPO)",
+            "@id": "bts:PhenotypeHPO",
             "@type": "rdfs:Class",
             "rdfs:comment": "Human Phenotype Ontology code (annotated by data contributor or DCC)",
-            "rdfs:label": "Phenotype(HPO)",
+            "rdfs:label": "PhenotypeHPO",
             "rdfs:subClassOf": [
                 {
                     "@id": "bts:Participant"
@@ -2543,17 +2543,17 @@
             "schema:isPartOf": {
                 "@id": "http://schema.biothings.io"
             },
-            "sms:displayName": "Phenotype (HPO)",
+            "sms:displayName": "Phenotype HPO",
             "sms:required": "sms:false",
             "sms:validationRules": [
                 "list"
             ]
         },
         {
-            "@id": "bts:Phenotype(SourceText)",
+            "@id": "bts:PhenotypeSourceText",
             "@type": "rdfs:Class",
             "rdfs:comment": "Phenotype as described by data contributor",
-            "rdfs:label": "Phenotype(SourceText)",
+            "rdfs:label": "PhenotypeSourceText",
             "rdfs:subClassOf": [
                 {
                     "@id": "bts:Participant"
@@ -2562,7 +2562,7 @@
             "schema:isPartOf": {
                 "@id": "http://schema.biothings.io"
             },
-            "sms:displayName": "Phenotype (Source Text)",
+            "sms:displayName": "Phenotype Source Text",
             "sms:required": "sms:false",
             "sms:validationRules": [
                 "list"
@@ -2594,10 +2594,10 @@
             "sms:validationRules": []
         },
         {
-            "@id": "bts:AgeatPhenotypeAssignment(Days)",
+            "@id": "bts:AgeatPhenotypeAssignment",
             "@type": "rdfs:Class",
-            "rdfs:comment": "Age in days at which phenotype was recorded (or onset??)",
-            "rdfs:label": "AgeatPhenotypeAssignment(Days)",
+            "rdfs:comment": "Age in days at which phenotype was recorded",
+            "rdfs:label": "AgeatPhenotypeAssignment",
             "rdfs:subClassOf": [
                 {
                     "@id": "bts:Participant"
@@ -2606,14 +2606,14 @@
             "schema:isPartOf": {
                 "@id": "http://schema.biothings.io"
             },
-            "sms:displayName": "Age at Phenotype Assignment (Days)",
+            "sms:displayName": "Age at Phenotype Assignment",
             "sms:required": "sms:false",
             "sms:validationRules": []
         },
         {
             "@id": "bts:DiagnosisType",
             "@type": "rdfs:Class",
-            "rdfs:comment": "How diagnosis was assigned ??",
+            "rdfs:comment": "How diagnosis was assigned",
             "rdfs:label": "DiagnosisType",
             "rdfs:subClassOf": [
                 {
@@ -2628,10 +2628,10 @@
             "sms:validationRules": []
         },
         {
-            "@id": "bts:Diagnosis(MONDO)",
+            "@id": "bts:DiagnosisMONDO",
             "@type": "rdfs:Class",
             "rdfs:comment": "Mondo disease ontology code (annotated by data contributor or DCC)",
-            "rdfs:label": "Diagnosis(MONDO)",
+            "rdfs:label": "DiagnosisMONDO",
             "rdfs:subClassOf": [
                 {
                     "@id": "bts:Participant"
@@ -2640,17 +2640,17 @@
             "schema:isPartOf": {
                 "@id": "http://schema.biothings.io"
             },
-            "sms:displayName": "Diagnosis (MONDO)",
+            "sms:displayName": "Diagnosis MONDO",
             "sms:required": "sms:false",
             "sms:validationRules": [
                 "list"
             ]
         },
         {
-            "@id": "bts:Diagnosis(NCIT)",
+            "@id": "bts:DiagnosisNCIT",
             "@type": "rdfs:Class",
             "rdfs:comment": "NCI Thesaurus code (annotated by data contributor or DCC)",
-            "rdfs:label": "Diagnosis(NCIT)",
+            "rdfs:label": "DiagnosisNCIT",
             "rdfs:subClassOf": [
                 {
                     "@id": "bts:Participant"
@@ -2659,17 +2659,17 @@
             "schema:isPartOf": {
                 "@id": "http://schema.biothings.io"
             },
-            "sms:displayName": "Diagnosis (NCIT)",
+            "sms:displayName": "Diagnosis NCIT",
             "sms:required": "sms:false",
             "sms:validationRules": [
                 "list"
             ]
         },
         {
-            "@id": "bts:Diagnosis(ICD)",
+            "@id": "bts:DiagnosisICD",
             "@type": "rdfs:Class",
             "rdfs:comment": "ICD-10 code (annotated by data contributor or DCC)",
-            "rdfs:label": "Diagnosis(ICD)",
+            "rdfs:label": "DiagnosisICD",
             "rdfs:subClassOf": [
                 {
                     "@id": "bts:Participant"
@@ -2678,17 +2678,17 @@
             "schema:isPartOf": {
                 "@id": "http://schema.biothings.io"
             },
-            "sms:displayName": "Diagnosis (ICD)",
+            "sms:displayName": "Diagnosis ICD",
             "sms:required": "sms:false",
             "sms:validationRules": [
                 "list"
             ]
         },
         {
-            "@id": "bts:Diagnosis(SourceText)",
+            "@id": "bts:DiagnosisSourceText",
             "@type": "rdfs:Class",
             "rdfs:comment": "Diagnosis as described by data contributor",
-            "rdfs:label": "Diagnosis(SourceText)",
+            "rdfs:label": "DiagnosisSourceText",
             "rdfs:subClassOf": [
                 {
                     "@id": "bts:Participant"
@@ -2697,17 +2697,17 @@
             "schema:isPartOf": {
                 "@id": "http://schema.biothings.io"
             },
-            "sms:displayName": "Diagnosis (Source Text)",
+            "sms:displayName": "Diagnosis Source Text",
             "sms:required": "sms:false",
             "sms:validationRules": [
                 "list"
             ]
         },
         {
-            "@id": "bts:AgeatDiagnosis(Days)",
+            "@id": "bts:AgeatDiagnosis",
             "@type": "rdfs:Class",
-            "rdfs:comment": "Age in days at which phenotype was assigned (or onset??)",
-            "rdfs:label": "AgeatDiagnosis(Days)",
+            "rdfs:comment": "Age in days at which phenotype was assigned",
+            "rdfs:label": "AgeatDiagnosis",
             "rdfs:subClassOf": [
                 {
                     "@id": "bts:Participant"
@@ -2716,7 +2716,7 @@
             "schema:isPartOf": {
                 "@id": "http://schema.biothings.io"
             },
-            "sms:displayName": "Age at Diagnosis (Days)",
+            "sms:displayName": "Age at Diagnosis",
             "sms:required": "sms:false",
             "sms:validationRules": []
         },
@@ -2772,7 +2772,7 @@
                     "@id": "bts:ParentSampleType"
                 },
                 {
-                    "@id": "bts:AgeAtBiospecimenCollection(Days)"
+                    "@id": "bts:AgeAtBiospecimenCollection"
                 },
                 {
                     "@id": "bts:SampleAvailability"
@@ -2795,7 +2795,7 @@
         {
             "@id": "bts:CollectionID",
             "@type": "rdfs:Class",
-            "rdfs:comment": "Identifier for a collection event, during which one or more primary samples are collected, assigned by DCC. Referenced in time with respect to clinical course or to other collection events.",
+            "rdfs:comment": "Identifier for the eldest sample in a lineage of processed, pooled, or aliquoted samples. This may be the same as Parent Sample ID or Sample ID (if no processing was performed).",
             "rdfs:label": "CollectionID",
             "rdfs:subClassOf": [
                 {
@@ -2812,7 +2812,7 @@
         {
             "@id": "bts:CollectionSampleType",
             "@type": "rdfs:Class",
-            "rdfs:comment": "Type of biological material comprising the collected sample",
+            "rdfs:comment": "Type of biological material comprising the collected sample (e.g. Whole blood, Bone marrow, Saliva, etc.)",
             "rdfs:label": "CollectionSampleType",
             "rdfs:subClassOf": [
                 {
@@ -2829,7 +2829,7 @@
         {
             "@id": "bts:SampleID",
             "@type": "rdfs:Class",
-            "rdfs:comment": "List of Collection?? IDs for biospecimens associated with this file",
+            "rdfs:comment": "List of Sample or Container IDs for biospecimens associated with this file",
             "rdfs:label": "SampleID",
             "rdfs:subClassOf": [
                 {
@@ -2848,7 +2848,7 @@
         {
             "@id": "bts:ContainerID",
             "@type": "rdfs:Class",
-            "rdfs:comment": "Unique identifier for specific container of sample, assigned by DCC or contributor??. For example, distinct aliquots of a sample will have the same Sample ID but different Container IDs.",
+            "rdfs:comment": "Identifier for specific container/aliquot of sample, if applicable. For example, distinct aliquots of a sample will have the same Sample ID but different Container IDs.",
             "rdfs:label": "ContainerID",
             "rdfs:subClassOf": [
                 {
@@ -2865,7 +2865,7 @@
         {
             "@id": "bts:SampleType",
             "@type": "rdfs:Class",
-            "rdfs:comment": "Type of biological material comprising the sample",
+            "rdfs:comment": "Type of biological material comprising the sample (e.g. Plasma, Serum, White blood cells, DNA, RNA, etc.)",
             "rdfs:label": "SampleType",
             "rdfs:subClassOf": [
                 {
@@ -2876,13 +2876,13 @@
                 "@id": "http://schema.biothings.io"
             },
             "sms:displayName": "Sample Type",
-            "sms:required": "sms:false",
+            "sms:required": "sms:true",
             "sms:validationRules": []
         },
         {
             "@id": "bts:ParentSampleID",
             "@type": "rdfs:Class",
-            "rdfs:comment": "Identifier from Parent Sample from which Sample was derived (if applicable)",
+            "rdfs:comment": "Identifier for the direct parent from which Sample was derived, processed, pooled, etc. (if applicable)",
             "rdfs:label": "ParentSampleID",
             "rdfs:subClassOf": [
                 {
@@ -2899,7 +2899,7 @@
         {
             "@id": "bts:ParentSampleType",
             "@type": "rdfs:Class",
-            "rdfs:comment": "Type of Parent Sample",
+            "rdfs:comment": "Type of biological material comprising the parent sample (e.g. Plasma, Serum, White blood cells, etc.)",
             "rdfs:label": "ParentSampleType",
             "rdfs:subClassOf": [
                 {
@@ -2919,10 +2919,10 @@
             "sms:validationRules": []
         },
         {
-            "@id": "bts:AgeAtBiospecimenCollection(Days)",
+            "@id": "bts:AgeAtBiospecimenCollection",
             "@type": "rdfs:Class",
-            "rdfs:comment": "Age (in days) of participant at time of biospecimen collection",
-            "rdfs:label": "AgeAtBiospecimenCollection(Days)",
+            "rdfs:comment": "Age in days of participant at time of biospecimen collection",
+            "rdfs:label": "AgeAtBiospecimenCollection",
             "rdfs:subClassOf": [
                 {
                     "@id": "bts:Biospecimen"
@@ -2931,7 +2931,7 @@
             "schema:isPartOf": {
                 "@id": "http://schema.biothings.io"
             },
-            "sms:displayName": "Age At Biospecimen Collection (Days)",
+            "sms:displayName": "Age At Biospecimen Collection",
             "sms:required": "sms:false",
             "sms:validationRules": []
         },
@@ -2997,7 +2997,7 @@
         {
             "@id": "bts:LaboratoryProcedure",
             "@type": "rdfs:Class",
-            "rdfs:comment": "Procedure by which Sample was derived from Parent Sample",
+            "rdfs:comment": "Procedure by which Sample was derived from Parent Sample (e.g. RBC lysis, Centrifugation, Ficoll, etc.)",
             "rdfs:label": "LaboratoryProcedure",
             "rdfs:subClassOf": [
                 {
@@ -3014,7 +3014,7 @@
         {
             "@id": "bts:BiospecimenStorage",
             "@type": "rdfs:Class",
-            "rdfs:comment": "Method by which Sample is stored",
+            "rdfs:comment": "Method by which Container is stored (e.g. -80C freezer, Liquid nitrogen, etc.)",
             "rdfs:label": "BiospecimenStorage",
             "rdfs:subClassOf": [
                 {
@@ -3094,7 +3094,7 @@
         {
             "@id": "bts:DataAccess",
             "@type": "rdfs:Class",
-            "rdfs:comment": "Type of access control on this file",
+            "rdfs:comment": "Type of access control on this file, determined by DCC",
             "rdfs:label": "DataAccess",
             "rdfs:subClassOf": [
                 {
@@ -3150,7 +3150,7 @@
                 "@id": "http://schema.biothings.io"
             },
             "sms:displayName": "Original File Name",
-            "sms:required": "sms:false",
+            "sms:required": "sms:true",
             "sms:validationRules": []
         },
         {
@@ -3167,13 +3167,13 @@
                 "@id": "http://schema.biothings.io"
             },
             "sms:displayName": "Filename",
-            "sms:required": "sms:false",
+            "sms:required": "sms:true",
             "sms:validationRules": []
         },
         {
             "@id": "bts:DataCategory",
             "@type": "rdfs:Class",
-            "rdfs:comment": "General category of data in file, e.g. Clinical; Genomic; Proteomic; Metabolomic",
+            "rdfs:comment": "General category of data in file (e.g. Clinical, Genomics, Proteomics, Metabolomics, Immune maps, Transcriptomics, etc.)",
             "rdfs:label": "DataCategory",
             "rdfs:subClassOf": [
                 {
@@ -3184,13 +3184,13 @@
                 "@id": "http://schema.biothings.io"
             },
             "sms:displayName": "Data Category",
-            "sms:required": "sms:false",
+            "sms:required": "sms:true",
             "sms:validationRules": []
         },
         {
             "@id": "bts:DataType",
             "@type": "rdfs:Class",
-            "rdfs:comment": "Specific type of data contained in file, e.g. Simple nucleotide variations; aligned reads; gVCF",
+            "rdfs:comment": "Specific type of data contained in file (e.g. Aligned reads, Unaligned reads, SNV, CNV, Gene fusions, Isoform expression, Gene expression quantification, Structural variations, Cytokine profiles, Operation reports, Pathology reports, Histology images, Clinical supplement, Protein expression quantification, etc.)",
             "rdfs:label": "DataType",
             "rdfs:subClassOf": [
                 {
@@ -3207,7 +3207,7 @@
         {
             "@id": "bts:ExperimentalStrategy",
             "@type": "rdfs:Class",
-            "rdfs:comment": "Specific experimental method used to obtain data in file, e.g. Whole-genome sequencing; LCMS metabolomics",
+            "rdfs:comment": "Experimental method used to obtain data in file (e.g. WGS, RNAseq, WXS, SOMAscan, Mass spec proteomics, LCMS metabolomics, Multiplex immunoassay, Meso Scale Discovery, etc.)",
             "rdfs:label": "ExperimentalStrategy",
             "rdfs:subClassOf": [
                 {
@@ -3224,7 +3224,7 @@
         {
             "@id": "bts:AccessURL",
             "@type": "rdfs:Class",
-            "rdfs:comment": "Storage location for this file ??",
+            "rdfs:comment": "Storage location for this file",
             "rdfs:label": "AccessURL",
             "rdfs:subClassOf": [
                 {
@@ -3241,7 +3241,7 @@
         {
             "@id": "bts:Format",
             "@type": "rdfs:Class",
-            "rdfs:comment": "Format of file",
+            "rdfs:comment": "Format of file (e.g. bam, cram, vcf, csv, html, png, fastq, pdf, dicom, etc.)",
             "rdfs:label": "Format",
             "rdfs:subClassOf": [
                 {
@@ -3252,7 +3252,7 @@
                 "@id": "http://schema.biothings.io"
             },
             "sms:displayName": "Format",
-            "sms:required": "sms:false",
+            "sms:required": "sms:true",
             "sms:validationRules": []
         },
         {
@@ -3286,13 +3286,13 @@
                 "@id": "http://schema.biothings.io"
             },
             "sms:displayName": "Participant ID",
-            "sms:required": "sms:false",
+            "sms:required": "sms:true",
             "sms:validationRules": []
         },
         {
             "@id": "bts:SampleID",
             "@type": "rdfs:Class",
-            "rdfs:comment": "List of Collection?? IDs for biospecimens associated with this file",
+            "rdfs:comment": "List of Sample or Container IDs for biospecimens associated with this file",
             "rdfs:label": "SampleID",
             "rdfs:subClassOf": [
                 {
