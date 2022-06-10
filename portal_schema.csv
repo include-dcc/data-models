@@ -53,5 +53,3 @@ Experimental Strategy,"Experimental method used to obtain data in file (e.g. WGS
 Access URL,Storage location for this file,,,FALSE,,Data File,,,
 Format,"Format of file (e.g. bam, cram, vcf, csv, html, png, fastq, pdf, dicom, etc.)",,,TRUE,,Data File,,,
 Size,Size of file,,,FALSE,,Data File,,,
-Participant ID,List of Participant IDs for participants associated with this file,,,TRUE,,Data File,,,list
-Sample ID,List of Sample or Container IDs for biospecimens associated with this file,,,FALSE,,Data File,,,list

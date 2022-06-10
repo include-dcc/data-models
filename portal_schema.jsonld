@@ -2237,11 +2237,11 @@
         {
             "@id": "bts:ParticipantID",
             "@type": "rdfs:Class",
-            "rdfs:comment": "List of Participant IDs for participants associated with this file",
+            "rdfs:comment": "Unique identifier for the participant, assigned by DCC",
             "rdfs:label": "ParticipantID",
             "rdfs:subClassOf": [
                 {
-                    "@id": "bts:DataFile"
+                    "@id": "bts:Participant"
                 }
             ],
             "schema:isPartOf": {
@@ -2249,9 +2249,7 @@
             },
             "sms:displayName": "Participant ID",
             "sms:required": "sms:true",
-            "sms:validationRules": [
-                "list"
-            ]
+            "sms:validationRules": []
         },
         {
             "@id": "bts:ExternalID",
@@ -2829,21 +2827,19 @@
         {
             "@id": "bts:SampleID",
             "@type": "rdfs:Class",
-            "rdfs:comment": "List of Sample or Container IDs for biospecimens associated with this file",
+            "rdfs:comment": "Identifier for sample. A sample is a unique biological material; two samples with two different IDs are biologically distinct.",
             "rdfs:label": "SampleID",
             "rdfs:subClassOf": [
                 {
-                    "@id": "bts:DataFile"
+                    "@id": "bts:Biospecimen"
                 }
             ],
             "schema:isPartOf": {
                 "@id": "http://schema.biothings.io"
             },
             "sms:displayName": "Sample ID",
-            "sms:required": "sms:false",
-            "sms:validationRules": [
-                "list"
-            ]
+            "sms:required": "sms:true",
+            "sms:validationRules": []
         },
         {
             "@id": "bts:ContainerID",
@@ -3269,40 +3265,6 @@
                 "@id": "http://schema.biothings.io"
             },
             "sms:displayName": "Size",
-            "sms:required": "sms:false",
-            "sms:validationRules": []
-        },
-        {
-            "@id": "bts:ParticipantID",
-            "@type": "rdfs:Class",
-            "rdfs:comment": "List of Participant IDs for participants associated with this file",
-            "rdfs:label": "ParticipantID",
-            "rdfs:subClassOf": [
-                {
-                    "@id": "bts:DataFile"
-                }
-            ],
-            "schema:isPartOf": {
-                "@id": "http://schema.biothings.io"
-            },
-            "sms:displayName": "Participant ID",
-            "sms:required": "sms:true",
-            "sms:validationRules": []
-        },
-        {
-            "@id": "bts:SampleID",
-            "@type": "rdfs:Class",
-            "rdfs:comment": "List of Sample or Container IDs for biospecimens associated with this file",
-            "rdfs:label": "SampleID",
-            "rdfs:subClassOf": [
-                {
-                    "@id": "bts:DataFile"
-                }
-            ],
-            "schema:isPartOf": {
-                "@id": "http://schema.biothings.io"
-            },
-            "sms:displayName": "Sample ID",
             "sms:required": "sms:false",
             "sms:validationRules": []
         },
