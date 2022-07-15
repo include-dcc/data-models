@@ -2435,6 +2435,12 @@
                 },
                 {
                     "@id": "bts:Other"
+                },
+                {
+                    "@id": "bts:Prefernottoanswer"
+                },
+                {
+                    "@id": "bts:Unknown"
                 }
             ],
             "sms:displayName": "Race",
@@ -2462,7 +2468,10 @@
                     "@id": "bts:HispanicorLatino"
                 },
                 {
-                    "@id": "bts:Askedbutunknown"
+                    "@id": "bts:Prefernottoanswer"
+                },
+                {
+                    "@id": "bts:Unknown"
                 }
             ],
             "sms:displayName": "Ethnicity",
@@ -3847,6 +3856,23 @@
             "sms:validationRules": []
         },
         {
+            "@id": "bts:Prefernottoanswer",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "Prefernottoanswer",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:Race"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Prefer not to answer",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
             "@id": "bts:NotHispanicorLatino",
             "@type": "rdfs:Class",
             "rdfs:comment": "TBD",
@@ -3877,23 +3903,6 @@
                 "@id": "http://schema.biothings.io"
             },
             "sms:displayName": "Hispanic or Latino",
-            "sms:required": "sms:false",
-            "sms:validationRules": []
-        },
-        {
-            "@id": "bts:Askedbutunknown",
-            "@type": "rdfs:Class",
-            "rdfs:comment": "TBD",
-            "rdfs:label": "Askedbutunknown",
-            "rdfs:subClassOf": [
-                {
-                    "@id": "bts:Ethnicity"
-                }
-            ],
-            "schema:isPartOf": {
-                "@id": "http://schema.biothings.io"
-            },
-            "sms:displayName": "Asked but unknown",
             "sms:required": "sms:false",
             "sms:validationRules": []
         },
