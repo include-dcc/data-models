@@ -2160,6 +2160,9 @@
             ],
             "sms:requiresDependency": [
                 {
+                    "@id": "bts:StudyCode"
+                },
+                {
                     "@id": "bts:ParticipantID"
                 },
                 {
@@ -2181,9 +2184,6 @@
                     "@id": "bts:FamilyRelationship"
                 },
                 {
-                    "@id": "bts:StudyCode"
-                },
-                {
                     "@id": "bts:Sex"
                 },
                 {
@@ -2200,36 +2200,6 @@
                 },
                 {
                     "@id": "bts:AgeatLastVitalStatus"
-                },
-                {
-                    "@id": "bts:PhenotypeHPO"
-                },
-                {
-                    "@id": "bts:PhenotypeSourceText"
-                },
-                {
-                    "@id": "bts:PhenotypeInterpretation"
-                },
-                {
-                    "@id": "bts:AgeatPhenotypeAssignment"
-                },
-                {
-                    "@id": "bts:DiagnosisType"
-                },
-                {
-                    "@id": "bts:DiagnosisMONDO"
-                },
-                {
-                    "@id": "bts:DiagnosisNCIT"
-                },
-                {
-                    "@id": "bts:DiagnosisICD"
-                },
-                {
-                    "@id": "bts:DiagnosisSourceText"
-                },
-                {
-                    "@id": "bts:AgeatDiagnosis"
                 }
             ],
             "sms:validationRules": []
@@ -2538,51 +2508,113 @@
             "sms:validationRules": []
         },
         {
-            "@id": "bts:PhenotypeHPO",
+            "@id": "bts:Condition",
             "@type": "rdfs:Class",
-            "rdfs:comment": "Human Phenotype Ontology code (annotated by data contributor or DCC)",
-            "rdfs:label": "PhenotypeHPO",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "Condition",
             "rdfs:subClassOf": [
                 {
-                    "@id": "bts:Participant"
+                    "@id": "bts:Thing"
                 }
             ],
             "schema:isPartOf": {
                 "@id": "http://schema.biothings.io"
             },
-            "sms:displayName": "Phenotype HPO",
+            "sms:displayName": "Condition",
             "sms:required": "sms:false",
-            "sms:validationRules": [
-                "list"
-            ]
-        },
-        {
-            "@id": "bts:PhenotypeSourceText",
-            "@type": "rdfs:Class",
-            "rdfs:comment": "Phenotype as described by data contributor",
-            "rdfs:label": "PhenotypeSourceText",
-            "rdfs:subClassOf": [
+            "sms:requiresComponent": [
                 {
                     "@id": "bts:Participant"
+                }
+            ],
+            "sms:requiresDependency": [
+                {
+                    "@id": "bts:StudyCode"
+                },
+                {
+                    "@id": "bts:ParticipantID"
+                },
+                {
+                    "@id": "bts:ConditionDescription"
+                },
+                {
+                    "@id": "bts:AgeatConditionObservation"
+                },
+                {
+                    "@id": "bts:ConditionInterpretation"
+                },
+                {
+                    "@id": "bts:ConditionSource"
+                },
+                {
+                    "@id": "bts:HPOLabel"
+                },
+                {
+                    "@id": "bts:HPOCode"
+                },
+                {
+                    "@id": "bts:MONDOLabel"
+                },
+                {
+                    "@id": "bts:MONDOCode"
+                },
+                {
+                    "@id": "bts:MAXOLabel"
+                },
+                {
+                    "@id": "bts:MAXOCode"
+                },
+                {
+                    "@id": "bts:OtherLabel"
+                },
+                {
+                    "@id": "bts:OtherCode"
+                }
+            ],
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:ConditionDescription",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "Condition as worded by data contributor - this will be displayed in the portal",
+            "rdfs:label": "ConditionDescription",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:Condition"
                 }
             ],
             "schema:isPartOf": {
                 "@id": "http://schema.biothings.io"
             },
-            "sms:displayName": "Phenotype Source Text",
-            "sms:required": "sms:false",
-            "sms:validationRules": [
-                "list"
-            ]
+            "sms:displayName": "Condition Description",
+            "sms:required": "sms:true",
+            "sms:validationRules": []
         },
         {
-            "@id": "bts:PhenotypeInterpretation",
+            "@id": "bts:AgeatConditionObservation",
             "@type": "rdfs:Class",
-            "rdfs:comment": "Whether phenotype was observed or not",
-            "rdfs:label": "PhenotypeInterpretation",
+            "rdfs:comment": "Age in days at which condition was observed, recorded, or diagnosed",
+            "rdfs:label": "AgeatConditionObservation",
             "rdfs:subClassOf": [
                 {
-                    "@id": "bts:Participant"
+                    "@id": "bts:Condition"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Age at Condition Observation",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:ConditionInterpretation",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "Whether condition was observed or not. \"Not Observed\" indicates participant was specifically examined for that condition, or health record specifically queried for that condition, and found to be negative. Sept. 2022 release will only include positive assertions.",
+            "rdfs:label": "ConditionInterpretation",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:Condition"
                 }
             ],
             "schema:isPartOf": {
@@ -2596,134 +2628,168 @@
                     "@id": "bts:NotObserved"
                 }
             ],
-            "sms:displayName": "Phenotype Interpretation",
+            "sms:displayName": "Condition Interpretation",
             "sms:required": "sms:false",
             "sms:validationRules": []
         },
         {
-            "@id": "bts:AgeatPhenotypeAssignment",
+            "@id": "bts:ConditionSource",
             "@type": "rdfs:Class",
-            "rdfs:comment": "Age in days at which phenotype was recorded",
-            "rdfs:label": "AgeatPhenotypeAssignment",
+            "rdfs:comment": "Whether condition information was obtained from medical records (Clinical) or patient survey (Self-Reported)",
+            "rdfs:label": "ConditionSource",
             "rdfs:subClassOf": [
                 {
-                    "@id": "bts:Participant"
+                    "@id": "bts:Condition"
                 }
             ],
             "schema:isPartOf": {
                 "@id": "http://schema.biothings.io"
             },
-            "sms:displayName": "Age at Phenotype Assignment",
+            "schema:rangeIncludes": [
+                {
+                    "@id": "bts:Clinical"
+                },
+                {
+                    "@id": "bts:Self-Reported"
+                }
+            ],
+            "sms:displayName": "Condition Source",
             "sms:required": "sms:false",
             "sms:validationRules": []
         },
         {
-            "@id": "bts:DiagnosisType",
+            "@id": "bts:HPOLabel",
             "@type": "rdfs:Class",
-            "rdfs:comment": "How diagnosis was assigned",
-            "rdfs:label": "DiagnosisType",
+            "rdfs:comment": "Label for condition in the Human Phenotype Ontology (HPO)",
+            "rdfs:label": "HPOLabel",
             "rdfs:subClassOf": [
                 {
-                    "@id": "bts:Participant"
+                    "@id": "bts:Condition"
                 }
             ],
             "schema:isPartOf": {
                 "@id": "http://schema.biothings.io"
             },
-            "sms:displayName": "Diagnosis Type",
+            "sms:displayName": "HPO Label",
             "sms:required": "sms:false",
             "sms:validationRules": []
         },
         {
-            "@id": "bts:DiagnosisMONDO",
+            "@id": "bts:HPOCode",
             "@type": "rdfs:Class",
-            "rdfs:comment": "Mondo disease ontology code (annotated by data contributor or DCC)",
-            "rdfs:label": "DiagnosisMONDO",
+            "rdfs:comment": "Code for condition in the Human Phenotype Ontology (HPO)",
+            "rdfs:label": "HPOCode",
             "rdfs:subClassOf": [
                 {
-                    "@id": "bts:Participant"
+                    "@id": "bts:Condition"
                 }
             ],
             "schema:isPartOf": {
                 "@id": "http://schema.biothings.io"
             },
-            "sms:displayName": "Diagnosis MONDO",
+            "sms:displayName": "HPO Code",
             "sms:required": "sms:false",
-            "sms:validationRules": [
-                "list"
-            ]
+            "sms:validationRules": []
         },
         {
-            "@id": "bts:DiagnosisNCIT",
+            "@id": "bts:MONDOLabel",
             "@type": "rdfs:Class",
-            "rdfs:comment": "NCI Thesaurus code (annotated by data contributor or DCC)",
-            "rdfs:label": "DiagnosisNCIT",
+            "rdfs:comment": "Label for condition in the Mondo Disease Ontology (MONDO)",
+            "rdfs:label": "MONDOLabel",
             "rdfs:subClassOf": [
                 {
-                    "@id": "bts:Participant"
+                    "@id": "bts:Condition"
                 }
             ],
             "schema:isPartOf": {
                 "@id": "http://schema.biothings.io"
             },
-            "sms:displayName": "Diagnosis NCIT",
+            "sms:displayName": "MONDO Label",
             "sms:required": "sms:false",
-            "sms:validationRules": [
-                "list"
-            ]
+            "sms:validationRules": []
         },
         {
-            "@id": "bts:DiagnosisICD",
+            "@id": "bts:MONDOCode",
             "@type": "rdfs:Class",
-            "rdfs:comment": "ICD-10 code (annotated by data contributor or DCC)",
-            "rdfs:label": "DiagnosisICD",
+            "rdfs:comment": "Code for condition in the Mondo Disease Ontology (MONDO)",
+            "rdfs:label": "MONDOCode",
             "rdfs:subClassOf": [
                 {
-                    "@id": "bts:Participant"
+                    "@id": "bts:Condition"
                 }
             ],
             "schema:isPartOf": {
                 "@id": "http://schema.biothings.io"
             },
-            "sms:displayName": "Diagnosis ICD",
+            "sms:displayName": "MONDO Code",
             "sms:required": "sms:false",
-            "sms:validationRules": [
-                "list"
-            ]
+            "sms:validationRules": []
         },
         {
-            "@id": "bts:DiagnosisSourceText",
+            "@id": "bts:MAXOLabel",
             "@type": "rdfs:Class",
-            "rdfs:comment": "Diagnosis as described by data contributor",
-            "rdfs:label": "DiagnosisSourceText",
+            "rdfs:comment": "Label for condition in the Medical Action Ontology (MAXO)",
+            "rdfs:label": "MAXOLabel",
             "rdfs:subClassOf": [
                 {
-                    "@id": "bts:Participant"
+                    "@id": "bts:Condition"
                 }
             ],
             "schema:isPartOf": {
                 "@id": "http://schema.biothings.io"
             },
-            "sms:displayName": "Diagnosis Source Text",
+            "sms:displayName": "MAXO Label",
             "sms:required": "sms:false",
-            "sms:validationRules": [
-                "list"
-            ]
+            "sms:validationRules": []
         },
         {
-            "@id": "bts:AgeatDiagnosis",
+            "@id": "bts:MAXOCode",
             "@type": "rdfs:Class",
-            "rdfs:comment": "Age in days at which phenotype was assigned",
-            "rdfs:label": "AgeatDiagnosis",
+            "rdfs:comment": "Code for condition in the Medical Action Ontology (MAXO)",
+            "rdfs:label": "MAXOCode",
             "rdfs:subClassOf": [
                 {
-                    "@id": "bts:Participant"
+                    "@id": "bts:Condition"
                 }
             ],
             "schema:isPartOf": {
                 "@id": "http://schema.biothings.io"
             },
-            "sms:displayName": "Age at Diagnosis",
+            "sms:displayName": "MAXO Code",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:OtherLabel",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "Label for condition in another ontology (if no match in HPO, MONDO, or MAXO)",
+            "rdfs:label": "OtherLabel",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:Condition"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Other Label",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:OtherCode",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "Code for condition in another ontology (if no match in HPO, MONDO, or MAXO)",
+            "rdfs:label": "OtherCode",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:Condition"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Other Code",
             "sms:required": "sms:false",
             "sms:validationRules": []
         },
@@ -3061,13 +3127,19 @@
             ],
             "sms:requiresDependency": [
                 {
-                    "@id": "bts:DataAccess"
+                    "@id": "bts:ParticipantID"
+                },
+                {
+                    "@id": "bts:SampleID"
                 },
                 {
                     "@id": "bts:FileID"
                 },
                 {
                     "@id": "bts:Filename"
+                },
+                {
+                    "@id": "bts:DataAccess"
                 },
                 {
                     "@id": "bts:DataCategory"
@@ -3086,14 +3158,25 @@
                 },
                 {
                     "@id": "bts:Size"
-                },
-                {
-                    "@id": "bts:ParticipantID"
-                },
-                {
-                    "@id": "bts:SampleID"
                 }
             ],
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:FileID",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "File identifier, assigned by DCC",
+            "rdfs:label": "FileID",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:DataFile"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "File ID",
+            "sms:required": "sms:false",
             "sms:validationRules": []
         },
         {
@@ -3121,23 +3204,6 @@
                 }
             ],
             "sms:displayName": "Data Access",
-            "sms:required": "sms:false",
-            "sms:validationRules": []
-        },
-        {
-            "@id": "bts:FileID",
-            "@type": "rdfs:Class",
-            "rdfs:comment": "File identifier, assigned by DCC",
-            "rdfs:label": "FileID",
-            "rdfs:subClassOf": [
-                {
-                    "@id": "bts:DataFile"
-                }
-            ],
-            "schema:isPartOf": {
-                "@id": "http://schema.biothings.io"
-            },
-            "sms:displayName": "File ID",
             "sms:required": "sms:false",
             "sms:validationRules": []
         },
@@ -3947,7 +4013,7 @@
             "rdfs:label": "Observed",
             "rdfs:subClassOf": [
                 {
-                    "@id": "bts:PhenotypeInterpretation"
+                    "@id": "bts:ConditionInterpretation"
                 }
             ],
             "schema:isPartOf": {
@@ -3964,13 +4030,47 @@
             "rdfs:label": "NotObserved",
             "rdfs:subClassOf": [
                 {
-                    "@id": "bts:PhenotypeInterpretation"
+                    "@id": "bts:ConditionInterpretation"
                 }
             ],
             "schema:isPartOf": {
                 "@id": "http://schema.biothings.io"
             },
             "sms:displayName": "Not Observed",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:Clinical",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "Clinical",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:ConditionSource"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Clinical",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:Self-Reported",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "Self-Reported",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:ConditionSource"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Self-Reported",
             "sms:required": "sms:false",
             "sms:validationRules": []
         },
