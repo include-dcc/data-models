@@ -2885,7 +2885,7 @@
         {
             "@id": "bts:CollectionSampleType",
             "@type": "rdfs:Class",
-            "rdfs:comment": "Type of biological material comprising the collected sample (e.g. Whole blood, Bone marrow, Saliva, etc.)",
+            "rdfs:comment": "Type of biological material comprising the collected sample",
             "rdfs:label": "CollectionSampleType",
             "rdfs:subClassOf": [
                 {
@@ -2895,6 +2895,20 @@
             "schema:isPartOf": {
                 "@id": "http://schema.biothings.io"
             },
+            "schema:rangeIncludes": [
+                {
+                    "@id": "bts:Wholeblood"
+                },
+                {
+                    "@id": "bts:Notreported"
+                },
+                {
+                    "@id": "bts:Saliva"
+                },
+                {
+                    "@id": "bts:Derivedcellline"
+                }
+            ],
             "sms:displayName": "Collection Sample Type",
             "sms:required": "sms:false",
             "sms:validationRules": []
@@ -2936,7 +2950,7 @@
         {
             "@id": "bts:SampleType",
             "@type": "rdfs:Class",
-            "rdfs:comment": "Type of biological material comprising the sample (e.g. Plasma, Serum, White blood cells, DNA, RNA, etc.)",
+            "rdfs:comment": "Type of biological material comprising the sample",
             "rdfs:label": "SampleType",
             "rdfs:subClassOf": [
                 {
@@ -2946,6 +2960,47 @@
             "schema:isPartOf": {
                 "@id": "http://schema.biothings.io"
             },
+            "schema:rangeIncludes": [
+                {
+                    "@id": "bts:Plasma"
+                },
+                {
+                    "@id": "bts:Whitebloodcells"
+                },
+                {
+                    "@id": "bts:Redbloodcells"
+                },
+                {
+                    "@id": "bts:DNA"
+                },
+                {
+                    "@id": "bts:RNA"
+                },
+                {
+                    "@id": "bts:Peripheralbloodmononuclearcells"
+                },
+                {
+                    "@id": "bts:CD4+Tconvcells"
+                },
+                {
+                    "@id": "bts:NKcells"
+                },
+                {
+                    "@id": "bts:Monocytes"
+                },
+                {
+                    "@id": "bts:CD8+Tcells"
+                },
+                {
+                    "@id": "bts:Bcells"
+                },
+                {
+                    "@id": "bts:Granulocytes"
+                },
+                {
+                    "@id": "bts:Tregcells"
+                }
+            ],
             "sms:displayName": "Sample Type",
             "sms:required": "sms:true",
             "sms:validationRules": []
@@ -2970,7 +3025,7 @@
         {
             "@id": "bts:ParentSampleType",
             "@type": "rdfs:Class",
-            "rdfs:comment": "Type of biological material comprising the parent sample (e.g. Plasma, Serum, White blood cells, etc.)",
+            "rdfs:comment": "Type of biological material comprising the parent sample",
             "rdfs:label": "ParentSampleType",
             "rdfs:subClassOf": [
                 {
@@ -2980,6 +3035,26 @@
             "schema:isPartOf": {
                 "@id": "http://schema.biothings.io"
             },
+            "schema:rangeIncludes": [
+                {
+                    "@id": "bts:NotReported"
+                },
+                {
+                    "@id": "bts:PeripheralWholeBlood"
+                },
+                {
+                    "@id": "bts:DerivedCellLine"
+                },
+                {
+                    "@id": "bts:Saliva"
+                },
+                {
+                    "@id": "bts:Wholeblood"
+                },
+                {
+                    "@id": "bts:WBCs"
+                }
+            ],
             "sms:displayName": "Parent Sample Type",
             "sms:required": "sms:false",
             "sms:requiresDependency": [
@@ -3061,6 +3136,14 @@
             "schema:isPartOf": {
                 "@id": "http://schema.biothings.io"
             },
+            "schema:rangeIncludes": [
+                {
+                    "@id": "bts:Ml"
+                },
+                {
+                    "@id": "bts:Ul"
+                }
+            ],
             "sms:displayName": "Volume Unit",
             "sms:required": "sms:false",
             "sms:validationRules": []
@@ -3068,7 +3151,7 @@
         {
             "@id": "bts:LaboratoryProcedure",
             "@type": "rdfs:Class",
-            "rdfs:comment": "Procedure by which Sample was derived from Parent Sample (e.g. RBC lysis, Centrifugation, Ficoll, etc.)",
+            "rdfs:comment": "Procedure by which Sample was derived from Parent Sample",
             "rdfs:label": "LaboratoryProcedure",
             "rdfs:subClassOf": [
                 {
@@ -3078,6 +3161,32 @@
             "schema:isPartOf": {
                 "@id": "http://schema.biothings.io"
             },
+            "schema:rangeIncludes": [
+                {
+                    "@id": "bts:Centrifugation"
+                },
+                {
+                    "@id": "bts:RBClysis"
+                },
+                {
+                    "@id": "bts:Lyse/fixbuffer"
+                },
+                {
+                    "@id": "bts:FACS"
+                },
+                {
+                    "@id": "bts:PAXgeneDNA"
+                },
+                {
+                    "@id": "bts:PAXgeneRNA"
+                },
+                {
+                    "@id": "bts:QiagenAllprep"
+                },
+                {
+                    "@id": "bts:Ficoll"
+                }
+            ],
             "sms:displayName": "Laboratory Procedure",
             "sms:required": "sms:false",
             "sms:validationRules": []
@@ -3085,7 +3194,7 @@
         {
             "@id": "bts:BiospecimenStorage",
             "@type": "rdfs:Class",
-            "rdfs:comment": "Method by which Container is stored (e.g. -80C freezer, Liquid nitrogen, etc.)",
+            "rdfs:comment": "Method by which Container is stored",
             "rdfs:label": "BiospecimenStorage",
             "rdfs:subClassOf": [
                 {
@@ -3095,6 +3204,14 @@
             "schema:isPartOf": {
                 "@id": "http://schema.biothings.io"
             },
+            "schema:rangeIncludes": [
+                {
+                    "@id": "bts:Minus80degreesCelsius"
+                },
+                {
+                    "@id": "bts:Liquidnitrogenstorage"
+                }
+            ],
             "sms:displayName": "Biospecimen Storage",
             "sms:required": "sms:false",
             "sms:validationRules": []
@@ -3244,7 +3361,7 @@
         {
             "@id": "bts:DataCategory",
             "@type": "rdfs:Class",
-            "rdfs:comment": "General category of data in file (e.g. Clinical, Genomics, Proteomics, Metabolomics, Immune maps, Transcriptomics, etc.)",
+            "rdfs:comment": "General category of data in file",
             "rdfs:label": "DataCategory",
             "rdfs:subClassOf": [
                 {
@@ -3254,6 +3371,26 @@
             "schema:isPartOf": {
                 "@id": "http://schema.biothings.io"
             },
+            "schema:rangeIncludes": [
+                {
+                    "@id": "bts:Clinical"
+                },
+                {
+                    "@id": "bts:Genomics"
+                },
+                {
+                    "@id": "bts:Proteomics"
+                },
+                {
+                    "@id": "bts:Metabolomics"
+                },
+                {
+                    "@id": "bts:Immuneprofiling"
+                },
+                {
+                    "@id": "bts:Transcriptomics"
+                }
+            ],
             "sms:displayName": "Data Category",
             "sms:required": "sms:true",
             "sms:validationRules": []
@@ -3261,7 +3398,7 @@
         {
             "@id": "bts:DataType",
             "@type": "rdfs:Class",
-            "rdfs:comment": "Specific type of data contained in file (e.g. Aligned reads, Unaligned reads, SNV, CNV, Gene fusions, Isoform expression, Gene expression quantification, Structural variations, Cytokine profiles, Operation reports, Pathology reports, Histology images, Clinical supplement, Protein expression quantification, etc.)",
+            "rdfs:comment": "Specific type of data contained in file",
             "rdfs:label": "DataType",
             "rdfs:subClassOf": [
                 {
@@ -3271,6 +3408,35 @@
             "schema:isPartOf": {
                 "@id": "http://schema.biothings.io"
             },
+            "schema:rangeIncludes": [
+                {
+                    "@id": "bts:Preprocessedmetaboliterelativeabundance"
+                },
+                {
+                    "@id": "bts:Absoluteproteinconcentration"
+                },
+                {
+                    "@id": "bts:Alignedreads"
+                },
+                {
+                    "@id": "bts:Simplenucleotidevariations"
+                },
+                {
+                    "@id": "bts:GVCF"
+                },
+                {
+                    "@id": "bts:Geneexpressionquantifications"
+                },
+                {
+                    "@id": "bts:Genefusions"
+                },
+                {
+                    "@id": "bts:Somaticcopynumbervariations"
+                },
+                {
+                    "@id": "bts:Somaticstructuralvariations"
+                }
+            ],
             "sms:displayName": "Data Type",
             "sms:required": "sms:false",
             "sms:validationRules": []
@@ -3278,7 +3444,7 @@
         {
             "@id": "bts:ExperimentalStrategy",
             "@type": "rdfs:Class",
-            "rdfs:comment": "Experimental method used to obtain data in file (e.g. WGS, RNAseq, WXS, SOMAscan, Mass spec proteomics, LCMS metabolomics, Multiplex immunoassay, Meso Scale Discovery, etc.)",
+            "rdfs:comment": "Experimental method used to obtain data in file",
             "rdfs:label": "ExperimentalStrategy",
             "rdfs:subClassOf": [
                 {
@@ -3288,6 +3454,20 @@
             "schema:isPartOf": {
                 "@id": "http://schema.biothings.io"
             },
+            "schema:rangeIncludes": [
+                {
+                    "@id": "bts:Wholegenomesequencing"
+                },
+                {
+                    "@id": "bts:RNAseq"
+                },
+                {
+                    "@id": "bts:Multipleximmunoassay"
+                },
+                {
+                    "@id": "bts:Massspecmetabolomics"
+                }
+            ],
             "sms:displayName": "Experimental Strategy",
             "sms:required": "sms:false",
             "sms:validationRules": []
@@ -3312,7 +3492,7 @@
         {
             "@id": "bts:Format",
             "@type": "rdfs:Class",
-            "rdfs:comment": "Format of file (e.g. bam, cram, vcf, csv, html, png, fastq, pdf, dicom, etc.)",
+            "rdfs:comment": "Format of file",
             "rdfs:label": "Format",
             "rdfs:subClassOf": [
                 {
@@ -3322,6 +3502,35 @@
             "schema:isPartOf": {
                 "@id": "http://schema.biothings.io"
             },
+            "schema:rangeIncludes": [
+                {
+                    "@id": "bts:Tsv"
+                },
+                {
+                    "@id": "bts:Cram"
+                },
+                {
+                    "@id": "bts:Gvcf"
+                },
+                {
+                    "@id": "bts:Vcf"
+                },
+                {
+                    "@id": "bts:Maf"
+                },
+                {
+                    "@id": "bts:Txt"
+                },
+                {
+                    "@id": "bts:Pdf"
+                },
+                {
+                    "@id": "bts:Html"
+                },
+                {
+                    "@id": "bts:Png"
+                }
+            ],
             "sms:displayName": "Format",
             "sms:required": "sms:true",
             "sms:validationRules": []
@@ -4075,6 +4284,363 @@
             "sms:validationRules": []
         },
         {
+            "@id": "bts:Wholeblood",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "Wholeblood",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:CollectionSampleType"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Whole blood",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:Notreported",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "Notreported",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:CollectionSampleType"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Not reported",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:Saliva",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "Saliva",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:CollectionSampleType"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Saliva",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:Derivedcellline",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "Derivedcellline",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:CollectionSampleType"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Derived cell line",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:Plasma",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "Plasma",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:SampleType"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Plasma",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:Whitebloodcells",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "Whitebloodcells",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:SampleType"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "White blood cells",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:Redbloodcells",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "Redbloodcells",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:SampleType"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Red blood cells",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:DNA",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "DNA",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:SampleType"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "DNA",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:RNA",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "RNA",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:SampleType"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "RNA",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:Peripheralbloodmononuclearcells",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "Peripheralbloodmononuclearcells",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:SampleType"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Peripheral blood mononuclear cells",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:CD4+Tconvcells",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "CD4+Tconvcells",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:SampleType"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "CD4+ Tconv cells",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:NKcells",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "NKcells",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:SampleType"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "NK cells",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:Monocytes",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "Monocytes",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:SampleType"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Monocytes",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:CD8+Tcells",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "CD8+Tcells",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:SampleType"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "CD8+ T cells",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:Bcells",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "Bcells",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:SampleType"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "B cells",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:Granulocytes",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "Granulocytes",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:SampleType"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Granulocytes",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:Tregcells",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "Tregcells",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:SampleType"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Treg cells",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:NotReported",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "NotReported",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:ParentSampleType"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Not Reported",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:PeripheralWholeBlood",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "PeripheralWholeBlood",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:ParentSampleType"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Peripheral Whole Blood",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:DerivedCellLine",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "DerivedCellLine",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:ParentSampleType"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Derived Cell Line",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:WBCs",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "WBCs",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:ParentSampleType"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "WBCs",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
             "@id": "bts:Available",
             "@type": "rdfs:Class",
             "rdfs:comment": "TBD",
@@ -4105,6 +4671,210 @@
                 "@id": "http://schema.biothings.io"
             },
             "sms:displayName": "Unavailable",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:Ml",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "Ml",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:VolumeUnit"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "ml",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:Ul",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "Ul",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:VolumeUnit"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "ul",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:Centrifugation",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "Centrifugation",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:LaboratoryProcedure"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Centrifugation",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:RBClysis",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "RBClysis",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:LaboratoryProcedure"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "RBC lysis",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:Lyse/fixbuffer",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "Lyse/fixbuffer",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:LaboratoryProcedure"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Lyse/fix buffer",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:FACS",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "FACS",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:LaboratoryProcedure"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "FACS",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:PAXgeneDNA",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "PAXgeneDNA",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:LaboratoryProcedure"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "PAXgene DNA",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:PAXgeneRNA",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "PAXgeneRNA",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:LaboratoryProcedure"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "PAXgene RNA",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:QiagenAllprep",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "QiagenAllprep",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:LaboratoryProcedure"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Qiagen Allprep",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:Ficoll",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "Ficoll",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:LaboratoryProcedure"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Ficoll",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:Minus80degreesCelsius",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "Minus80degreesCelsius",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:BiospecimenStorage"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Minus 80 degrees Celsius",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:Liquidnitrogenstorage",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "Liquidnitrogenstorage",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:BiospecimenStorage"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Liquid nitrogen storage",
             "sms:required": "sms:false",
             "sms:validationRules": []
         },
@@ -4156,6 +4926,465 @@
                 "@id": "http://schema.biothings.io"
             },
             "sms:displayName": "Open",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:Genomics",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "Genomics",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:DataCategory"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Genomics",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:Proteomics",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "Proteomics",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:DataCategory"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Proteomics",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:Metabolomics",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "Metabolomics",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:DataCategory"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Metabolomics",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:Immuneprofiling",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "Immuneprofiling",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:DataCategory"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Immune profiling",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:Transcriptomics",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "Transcriptomics",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:DataCategory"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Transcriptomics",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:Preprocessedmetaboliterelativeabundance",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "Preprocessedmetaboliterelativeabundance",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:DataType"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Preprocessed metabolite relative abundance",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:Absoluteproteinconcentration",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "Absoluteproteinconcentration",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:DataType"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Absolute protein concentration",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:Alignedreads",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "Alignedreads",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:DataType"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Aligned reads",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:Simplenucleotidevariations",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "Simplenucleotidevariations",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:DataType"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Simple nucleotide variations",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:GVCF",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "GVCF",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:DataType"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "GVCF",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:Geneexpressionquantifications",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "Geneexpressionquantifications",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:DataType"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Gene expression quantifications",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:Genefusions",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "Genefusions",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:DataType"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Gene fusions",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:Somaticcopynumbervariations",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "Somaticcopynumbervariations",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:DataType"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Somatic copy number variations",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:Somaticstructuralvariations",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "Somaticstructuralvariations",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:DataType"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Somatic structural variations",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:Wholegenomesequencing",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "Wholegenomesequencing",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:ExperimentalStrategy"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Whole genome sequencing",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:RNAseq",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "RNAseq",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:ExperimentalStrategy"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "RNAseq",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:Multipleximmunoassay",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "Multipleximmunoassay",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:ExperimentalStrategy"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Multiplex immunoassay",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:Massspecmetabolomics",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "Massspecmetabolomics",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:ExperimentalStrategy"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Mass spec metabolomics",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:Tsv",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "Tsv",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:Format"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "tsv",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:Cram",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "Cram",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:Format"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "cram",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:Gvcf",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "Gvcf",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:Format"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "gvcf",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:Vcf",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "Vcf",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:Format"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "vcf",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:Maf",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "Maf",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:Format"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "maf",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:Txt",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "Txt",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:Format"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "txt",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:Pdf",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "Pdf",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:Format"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "pdf",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:Html",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "Html",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:Format"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "html",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:Png",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "Png",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:Format"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "png",
             "sms:required": "sms:false",
             "sms:validationRules": []
         }
