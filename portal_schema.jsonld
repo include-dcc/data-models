@@ -2039,6 +2039,9 @@
                     "@id": "bts:DS-ISP"
                 },
                 {
+                    "@id": "bts:DS-Nexus"
+                },
+                {
                     "@id": "bts:DS-PALS"
                 },
                 {
@@ -3668,6 +3671,23 @@
                 "@id": "http://schema.biothings.io"
             },
             "sms:displayName": "DS-ISP",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:DS-Nexus",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "DS-Nexus",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:StudyCode"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "DS-Nexus",
             "sms:required": "sms:false",
             "sms:validationRules": []
         },

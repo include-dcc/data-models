@@ -1,6 +1,6 @@
 Attribute,Description,Valid Values,DependsOn,Required,Source,Parent,Properties,DependsOn Component,Validation Rules
 Study,,,"Study Code, Study Name, Program, dbGaP",TRUE,,,,,
-Study Code,"Unique identifer for the study, assigned by DCC","ABC-DS, ADS, DS-Brain, DS-COG-ALL, DS-COG-AML, DS-Immune, DS-ISP, DS-PALS, DS-PCGC, DS-Sleep, DS360-CHD, DSC, ECODS, ExCEEDS, HTP, TRC-DS, X01-DeSmith, X01-Hakon",,TRUE,,Study,,,
+Study Code,"Unique identifer for the study, assigned by DCC","ABC-DS, ADS, DS-Brain, DS-COG-ALL, DS-COG-AML, DS-Immune, DS-ISP, DS-Nexus, DS-PALS, DS-PCGC, DS-Sleep, DS360-CHD, DSC, ECODS, ExCEEDS, HTP, TRC-DS, X01-DeSmith, X01-Hakon",,TRUE,,Study,,,
 Study Name,"Name of the study, chosen by data contributor",,,TRUE,,Study,,,
 Program,Funding source for the study,"INCLUDE, KF",,TRUE,,Study,,,
 dbGaP,dbGaP study accession code,,,FALSE,https://www.ncbi.nlm.nih.gov/gap/,Study,,,
