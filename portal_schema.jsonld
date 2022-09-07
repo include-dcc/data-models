@@ -1973,6 +1973,23 @@
             }
         },
         {
+            "@id": "bts:Component",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "Category of metadata (e.g. Study, Participant, Condition, Biospecimen, Data File)",
+            "rdfs:label": "Component",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "schema:Thing"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Component",
+            "sms:required": "sms:true",
+            "sms:validationRules": []
+        },
+        {
             "@id": "bts:Study",
             "@type": "rdfs:Class",
             "rdfs:comment": "TBD",
@@ -1988,6 +2005,9 @@
             "sms:displayName": "Study",
             "sms:required": "sms:true",
             "sms:requiresDependency": [
+                {
+                    "@id": "bts:Component"
+                },
                 {
                     "@id": "bts:StudyCode"
                 },
@@ -2033,7 +2053,7 @@
                     "@id": "bts:DS-COG-AML"
                 },
                 {
-                    "@id": "bts:DS-Immune"
+                    "@id": "bts:BRI-DSR"
                 },
                 {
                     "@id": "bts:DS-ISP"
@@ -2162,6 +2182,9 @@
                 }
             ],
             "sms:requiresDependency": [
+                {
+                    "@id": "bts:Component"
+                },
                 {
                     "@id": "bts:StudyCode"
                 },
@@ -2532,6 +2555,9 @@
             ],
             "sms:requiresDependency": [
                 {
+                    "@id": "bts:Component"
+                },
+                {
                     "@id": "bts:StudyCode"
                 },
                 {
@@ -2823,6 +2849,9 @@
                 }
             ],
             "sms:requiresDependency": [
+                {
+                    "@id": "bts:Component"
+                },
                 {
                     "@id": "bts:ParticipantID"
                 },
@@ -3247,6 +3276,9 @@
             ],
             "sms:requiresDependency": [
                 {
+                    "@id": "bts:Component"
+                },
+                {
                     "@id": "bts:ParticipantID"
                 },
                 {
@@ -3641,10 +3673,10 @@
             "sms:validationRules": []
         },
         {
-            "@id": "bts:DS-Immune",
+            "@id": "bts:BRI-DSR",
             "@type": "rdfs:Class",
             "rdfs:comment": "TBD",
-            "rdfs:label": "DS-Immune",
+            "rdfs:label": "BRI-DSR",
             "rdfs:subClassOf": [
                 {
                     "@id": "bts:StudyCode"
@@ -3653,7 +3685,7 @@
             "schema:isPartOf": {
                 "@id": "http://schema.biothings.io"
             },
-            "sms:displayName": "DS-Immune",
+            "sms:displayName": "BRI-DSR",
             "sms:required": "sms:false",
             "sms:validationRules": []
         },
