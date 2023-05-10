@@ -1,0 +1,296 @@
+# HTP Example:  Processing of HTP001B Collection into 8 subsamples (some of which are aliquoted into many different containers). 
+# Each of these has a record in the HTP dataset (those aliquoted into many containers have many records - one for each container)
+# HTP Data Source: https://www.synapse.org/#!Synapse:syn51384359,  https://docs.google.com/spreadsheets/d/1HaXIs_7T1j4EF-MhLKdTmPylcG8MWesJLsMMTJwopIk/edit#gid=0
+
+# Specimen Derivation Hierarchy in this example:
+
+# HTP0001B_Whole Blood (via Blood Draw, 1 container, used up)
+#	 HTP0001B_Whole Blood EDTA  (via Blood Draw + EDTA addition?), 1 container, used up)
+#		HTP0001B_Plasma (via centrifugation, split into 26 aliquoted containers) - initial derived specimen*
+#			182571463  (via aliquoting, 1 ml in a tube) - one aliquot of the plasma specimen
+#		HTP0001B_Red Blood Cells (via centrifugation, split into 14 aliquoted containers) - initial derived specimen*
+#			189024010 (via aliquoting, 1 ml in a tube) - one aliquot of the initial RBC specimen
+#		HTP0001B_White Blood Cells  (via RBC lysis, 1 container) - initial derived specimen
+#			HTP0001B_CD4+ Tconv cells (via FACS, 1 container)
+#			HTP0001B_CD8+ T cells (via FACS, 1 container)
+#			HTP0001B_Monocytes  (via FACS, 1 container)
+#			HTP0001B_NK cells(via FACS, 1 container)
+ 
+# * = a specimen record not represent in source data, because the specimen existed transiently and was immediately aliquoted. But it existed at one time, and is necessary to create a record of this for a fully consistent, provenanced account, and a CCDH compliant representation
+ 
+# ------------------------------------------------------------------------------------------------------- #
+ 
+# YAML-based representation of the NK Cell specimen above (1014619), using the current INCLUDE LinkML model
+- container_id: 1014619                              
+  type: Biospecimen
+  sample_id: HTP0001B_NK cells
+  sample_type:  NK cells
+  parent_sample_id: HTP0001B_White Blood Cells
+  parent_sample_type: White Blood Cells
+  collection_id: HTP0001B
+  collection_sample_type: Whole Blood 
+  participant_external_id: HTP0001B
+  age_in_days_at_biospecimen_collection: 8943
+  laboratory_procedure: FACS  
+  volume: 0
+  volume_unit: uL
+  biospecimen_storage: -80C Freezer
+  study_code: HTP
+  availability:  Unavailable 
+ 
+# ------------------------------------------------------------------------------------------#
+ 
+# YAML-based CRDC-H representations of each sample in this scenario:
+ 
+# The initial whole blood sample. Implied. Has HTP record. Completely comsumed in the processes of deriving new specimens.
+- id: HTP0001B_Whole Blood 
+  type: Specimen
+  specimen_type:  Collected Specimen, Fresh  # one of: Collected Specimen, Fresh | Collected Specimen, Treated | Fraction | Portion | Aliquot | Analyte
+  source_subject: HTP0001B                   # why does this have the same id as the CollectionID / SpecimenCollectionActivity?
+  material_type: Whole Blood
+  parent_specimen: null
+  associated_project: 
+    - id: HTP
+      type: ResearchProject
+  availability_status: Unavailable 
+  quantity_measure:                          # use this if we want to explicitly report that there is currently 0 ml left
+    - type: SpecimenQuantityObservation
+      observation_type: current volumne
+      value_quantity:
+        type: Quantity
+        value_decimal: 0.0
+        unit: milliliter
+  creation_activity: 
+    id: HTP0001B                             # this has no id field in the CCDH model - but the HTP data seems to provide an id for it?
+    type: SpecimenCollectionActivity
+    methods: 
+      - Blood Draw
+    quantitiy_collected:                     # estimated from combined volumes of derived plasma specimens
+      type: Quantity
+      value_decimal: 28.0
+      unit: milliliter
+    subject_age_at_collection:               # Note that in the normalized CRDH-H model, the subject's age at collection is only captured once, as part of the SpecimenCollecitonActivity.  To see this info from derived specimens, we have to climb up the parent_specimen path/hierarchy back to this parent.
+      - type: Quantity
+        value_ddecimal: 8493.0
+        unit: days 
+ 
+# The EDTA-stabilized whole blood specimen. Implied. Has HTP record. Completely comsumed in the processes of deriving new specimens.
+- id: HTP0001B_Whole Blood EDTA 
+  type: Specimen
+  specimen_type:  Collected Specimen, Treated
+  source_subject: HTP0001B
+  material_type: Whole Blood
+  parent_specimen: HTP0001B_Whole Blood
+  associated_project: 
+    - id: HTP
+      type: ResearchProject 
+ availability_status: Unavailable 
+  quantity_measure:                         
+    - type: SpecimenQuantityObservation
+      observation_type: current volumne
+      value_quantity:
+        type: Quantity
+        value_decimal: 0.0
+        unit: milliliter
+  creation_activity: 
+    type: SpecimenDerivationActivity
+    methods: 
+      - EDTA treatment                      # I changed the source data here (Blood Draw) to indicate the process through which this new specimen was derived
+    quantitiy_created:                      # estimated from combined volumes of derived plasma specimens, volume of EDTA
+      type: Quantity
+      value_decimal: 28.5
+      unit: milliliter
+ 
+# The initial derived Plasma sample. Implied, pre-aliquoting. Has HTP id in SampleID column, but no row/record in the source data (only rows/records for each aliquot). Completely comsumed in the processes of aliquoting.
+- id: HTP0001B_Plasma 
+  type: Specimen
+  specimen_type:  Fraction
+  source_subject: HTP0001B
+  material_type: Plasma
+  parent_specimen: HTP0001B_Whole Blood EDTA
+  associated_project: 
+    - id: HTP
+      type: ResearchProject
+  availability_status: Unavailable 
+  quantity_measure:                         
+    - type: SpecimenQuantityObservation
+      observation_type: current volumne
+      value_quantity:
+        type: Quantity
+        value_decimal: 0.0
+        unit: milliliter
+  creation_activity: 
+    type: SpecimenDerivationActivity
+    methods: 
+      - Centrifugation       
+    quantitiy_created:                      # estimated
+      type: Quantity
+      value_decimal: 22.0
+      unit: milliliter
+ 
+# One of the aliquots of the Plasma sample. Real. Has an HTP record. 1 ml remaining in a tube.
+- id: 182571463  
+  type: Specimen
+  specimen_type:  Aliquot
+  source_subject: HTP0001B
+  material_type: Plasma
+  parent_specimen: HTP0001B_Plasma          # note that the parent specimen here is the full Plasma specimen before aliquoting, not the WholeBloodEDTA sample as in the source data
+  associated_project: 
+    - id: HTP
+      type: ResearchProject
+  availability_status: Unavailable 
+  quantity_measure:                         
+    - type: SpecimenQuantityObservation
+      observation_type: current volumne
+      value_quantity:
+        type: Quantity
+        value_decimal: 1.0
+        unit: milliliter
+  storage_activity: 
+    - type: SpecimenStorageActivity
+      method: -80C Freezing                   # use this field if the data is concerned with the storge method/conditions, not a particular freezer in a lab
+  creation_activity: 
+    type: SpecimenDerivationActivity
+    methods: 
+      - Aliquoting       
+    quantitiy_created:                      
+      type: Quantity
+      value_decimal: 1.0
+      unit: milliliter
+ 
+# The initial derived RBC sample.  Implied, pre-aliquoting. Has HTP id in SampleID column, but no row/record in the source data (only rows/records for each aliquot). Completely comsumed in the processes of aliquoting.
+- id: HTP0001B_Red Blood Cells
+  type: Specimen
+  specimen_type:  Fraction
+  source_subject: HTP0001B
+  material_type: Red Blood Cells
+  parent_specimen: HTP0001B_Whole Blood EDTA
+  associated_project: 
+    - id: HTP
+      type: ResearchProject
+  availability_status: Unavailable 
+  quantity_measure:                         
+    - type: SpecimenQuantityObservation
+      observation_type: current volumne
+      value_quantity:
+        type: Quantity
+        value_decimal: 0.0
+        unit: milliliter
+  creation_activity: 
+    type: SpecimenDerivationActivity
+    methods: 
+      - Centrifugation 
+      - Dilution                            # I read into the data a bit here and assumed a dilution step happened to get the reported volumes
+    quantitiy_created:                      # volume I estimated for this 
+      type: Quantity
+      value_decimal: 14.0
+      unit: milliliter
+ 
+# One of the aliquots of the RBC sample. Real. Has an HTP record. 1 ml remaining in a tube.
+- id: 189024010 
+  type: Specimen
+  specimen_type:  Portion
+  source_subject: HTP0001B
+  material_type: Plasma
+  parent_specimen: HTP0001B_Red Blood Cells 
+  associated_project: 
+    - id: HTP
+      type: ResearchProject  
+  availability_status: Unavailable 
+  quantity_measure:                         
+    - type: SpecimenQuantityObservation
+      observation_type: current volumne
+      value_quantity:
+        type: Quantity
+        value_decimal: 1.0
+        unit: milliliter
+  storage_activity: 
+    - type: SpecimenStorageActivity
+      method: -80C Freezing
+  creation_activity: 
+    type: SpecimenDerivationActivity
+    derivation_methods: 
+      - Aliquoting    
+    quantitiy_created:                      
+      type: Quantity
+      value_decimal: 1.0
+      unit: milliliter
+ 
+# The initial derived WBC sample. Implied, pre-partitioning into cell types. Has HTP record. Completely comsumed in the processes of deriving subsamples.
+- id: HTP0001B_White Blood Cells
+  type: Specimen
+  specimen_type:  Fraction
+  source_subject: HTP0001B
+  material_type: White Blood Cells
+  parent_specimen: HTP0001B_Whole Blood EDTA
+  associated_project: 
+    - id: HTP
+      type: ResearchProject
+  availability_status: Unavailable 
+  quantity_measure:                         
+    - type: SpecimenQuantityObservation
+      observation_type: current volumne
+      value_quantity:
+        type: Quantity
+        value_decimal: 0.0
+        unit: milliliter
+  creation_activity: 
+    type: SpecimenDerivationActivity
+    methods: 
+      - Centrifugation                      # I assumed that both methods were involved in creating this specimen . . . discuss 
+      - RBC Lysis      
+    quantitiy_created:                      # estimated
+      type: Quantity
+      value_decimal: 2.5
+      unit: milliliter
+ 
+# One of the derived cell-specific specimens (NK Cells) from the WBC fraction (real, has an HTP record). 0 ml remaining in a tube.
+- id: 1014619                               # or, use  HTP0001B_NK cells?  In this case there is only one tube/aliquot for the specimen - but two ids are provided in the source record.
+  type: Specimen
+  specimen_type:  Fraction
+  source_subject: HTP0001B
+  material_type: NK Cells
+  parent_specimen: HTP0001B_White Blood Cells     
+  associated_project: 
+    - id: HTP
+      type: ResearchProject
+  availability_status:  Unavailable 
+  quantity_measure:                         
+    - type: SpecimenQuantityObservation
+      observation_type: current volumne
+      value_quantity:
+        type: Quantity
+        value_decimal: 0.0
+        unit: microliter
+  storage_activity: 
+    - type: SpecimenStorageActivity
+      method: -80C Freezing
+  creation_activity: 
+    type: SpecimenDerivationActivity
+    methods: 
+      - FACS     
+    quantitiy_created:                      
+      type: Quantity
+      value_decimal: 0.5               # I made this up . . .
+      unit: microliter     
+  
+## --------------------------------------------------------------------------------- ##
+ 
+# YAML-based representation of the NK Cell specimen above (1014619) using the current INCLUDE LinkML model
+- container_id: 1014619                              
+  type: Biospecimen
+  sample_id: HTP0001B_NK cells
+  sample_type:  NK cells
+  parent_sample_id: HTP0001B_White Blood Cells
+  parent_sample_type: White Blood Cells
+  collection_id: HTP0001B
+  collection_sample_type: Whole Blood 
+  participant_external_id: HTP0001B
+  age_in_days_at_biospecimen_collection: 8943
+  laboratory_procedure: FACS  
+  volume: 0
+  volume_unit: uL
+  biospecimen_storage: -80C Freezer
+  study_code: HTP
+  availability:  Unavailable 
+ 
